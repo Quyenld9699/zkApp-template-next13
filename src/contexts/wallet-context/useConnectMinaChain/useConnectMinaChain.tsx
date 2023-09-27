@@ -8,7 +8,7 @@ import { useZkClientContext } from 'src/contexts/zkclient-context/zkclient-conte
 // const Berkeley = Mina.Network('https://proxy.berkeley.minaexplorer.com/graphql');
 
 export default function useConnectMinaChain(): IDataChainConnected {
-    const { snarkyjs, isLoadingZkClient } = useZkClientContext();
+    const { zkClient, isLoadingZkClient } = useZkClientContext();
     const [isConnecting, setIsConnecting] = useState<boolean>(false);
     const notifier = useNotifier();
     const [data, setData] = useState<Pick<IDataChainConnected, 'accountExists' | 'userAddress' | 'userPublickey' | 'name'>>({
@@ -24,9 +24,9 @@ export default function useConnectMinaChain(): IDataChainConnected {
         try {
             if (isLoadingZkClient) return;
 
-            if (snarkyjs == null) return;
+            if (zkClient == null) return;
 
-            const { Mina, PublicKey, fetchAccount } = snarkyjs;
+            const { Mina, PublicKey, fetchAccount } = zkClient;
             const Berkeley = Mina.Network('https://proxy.berkeley.minaexplorer.com/graphql');
             Mina.setActiveInstance(Berkeley);
             await sleep(1000);
