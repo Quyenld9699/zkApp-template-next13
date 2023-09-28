@@ -2736,10 +2736,10 @@ tar-stream@^3.1.5:
     fast-fifo "^1.2.0"
     streamx "^2.15.0"
 
-testing_adding_number@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/testing_adding_number/-/testing_adding_number-0.1.0.tgz#121a907126c7e090daca405d4edc7975d4624b02"
-  integrity sha512-GKZcJLLbsJFE/ME8JPBKs77nIIIqzthUbgGvYtP6nsukdyCX7NLlRALk78mehFISFWr5UgkbQ+quiB7F9V47Ew==
+testing_adding_number@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/testing_adding_number/-/testing_adding_number-0.1.1.tgz#67f6e9fce24b550de9d07eadfde7f19787e12173"
+  integrity sha512-fnMJmcLo4YAR9SSSePknBJdmh9ZfPp1EFvKPhrcbWtXGIgRgmO1/zmfzLWV17cfMzTjd+pBAPWLPp7XBzKS8bA==
 
 text-table@^0.2.0:
   version "0.2.0"

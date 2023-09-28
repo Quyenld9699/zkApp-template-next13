@@ -1,13 +1,13 @@
 'use client';
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { useWalletContext } from 'src/contexts/wallet-context/wallet-context';
 import { useZkClientContext } from 'src/contexts/zkclient-context/zkclient-context';
-import useLoadContract from 'src/hooks/useLoadContract';
+import TestView from 'src/views/default/TestView/TestView';
 
 export default function Home() {
     const { isLoadingZkClient } = useZkClientContext();
     const { minaChain } = useWalletContext();
-    const {} = useLoadContract();
+
     if (isLoadingZkClient) {
         return (
             <Box sx={{ minHeight: '100svh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -15,6 +15,7 @@ export default function Home() {
             </Box>
         );
     }
+
     return (
         <Box>
             <Typography variant="h1">Hello zkApp</Typography>
@@ -25,6 +26,7 @@ export default function Home() {
                     <Typography>Address: {minaChain?.userAddress}</Typography>
                 </>
             )}
+            <TestView />
         </Box>
     );
 }

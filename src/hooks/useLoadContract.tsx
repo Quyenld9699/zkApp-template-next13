@@ -1,33 +1,60 @@
+import { SmartContract, PublicKey } from 'o1js';
 import { useState, useEffect } from 'react';
 import { useZkClientContext } from 'src/contexts/zkclient-context/zkclient-context';
-import { Add as TAdd } from 'testing_adding_number';
 
-export default function useLoadContract() {
-    const { zkClient, isLoadingZkClient } = useZkClientContext();
-
-    const [contract, setContract] = useState<TAdd | null>(null);
+type Props = {
+    importContract: () => Promise<any>;
+    contractPublicKeyBase58: string;
+    nameContract: string;
+};
+export default function useLoadContract<T>({ contractPublicKeyBase58, importContract, nameContract }: Props) {
+    const { zkClient } = useZkClientContext();
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [contract, setContract] = useState<T | null>(null);
+    const [publicKey, setPublicKey] = useState<PublicKey | null>(null);
 
     async function loadContract() {
         if (zkClient) {
-            const { PublicKey } = zkClient;
-            const { Add } = await import('testing_adding_number/build/src/Add');
-            await Add.compile();
-            const zkappPublicKey = PublicKey.fromBase58('B62qp9tTMyxHHPq67j5SrhdqDRafbsGRneNLecYmuU7d94U3SPsnPA3');
+            setIsLoading(true);
+            console.log(`loading contract ${nameContract}...`);
 
-            const _contract = new Add(zkappPublicKey);
-            await zkClient.fetchAccount({ publicKey: zkappPublicKey });
-            const num = await _contract.num.get();
-            console.log('num', num);
+            const { PublicKey } = zkClient;
+            const { [nameContract]: T } = await importContract();
+            await T.compile();
+            const contractPubKey = PublicKey.fromBase58(contractPublicKeyBase58);
+            const _contract = new T(contractPubKey);
+            setContract(_contract as T);
+            setPublicKey(contractPubKey);
+
+            console.log(`load contract ${nameContract} done.`);
+            setIsLoading(false);
+        }
+    }
+
+    async function fetchAccountContract() {
+        if (zkClient) {
+            const { fetchAccount } = zkClient;
+            if (publicKey) {
+                return await fetchAccount({ publicKey: publicKey });
+            } else {
+                console.error(`Contract ${nameContract}: null publicKey`);
+                throw Error(`Contract ${nameContract}: null publicKey`);
+            }
+        } else {
+            console.error(`Client not ready`);
+            throw Error(`Client not ready!`);
         }
     }
 
     useEffect(() => {
-        if (!isLoadingZkClient) {
-            loadContract();
-        }
-    }, [zkClient, isLoadingZkClient]);
+        loadContract();
+    }, [zkClient]);
 
     return {
         loadContract,
+        isLoading,
+        contract,
+        publicKey,
+        fetchAccountContract,
     };
 }

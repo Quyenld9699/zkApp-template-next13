@@ -29,7 +29,7 @@ export default function useConnectMinaChain(): IDataChainConnected {
             const { Mina, PublicKey, fetchAccount } = zkClient;
             const Berkeley = Mina.Network('https://proxy.berkeley.minaexplorer.com/graphql');
             Mina.setActiveInstance(Berkeley);
-            await sleep(1000);
+            // await sleep(1000);
 
             const mina = await window!.mina;
             if (mina === null || mina === undefined) {

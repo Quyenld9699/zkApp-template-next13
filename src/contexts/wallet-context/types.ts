@@ -1,4 +1,4 @@
-import { PublicKey, fetchAccount } from 'snarkyjs';
+import { PublicKey, fetchAccount } from 'o1js';
 
 export interface IDataChainConnected {
     name?: string;
