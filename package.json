@@ -18,15 +18,17 @@
     "@types/react-dom": "18.2.7",
     "bignumber.js": "^9.1.1",
     "buffer": "^6.0.3",
+    "coi-serviceworker": "^0.1.7",
     "date-fns": "^2.30.0",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",
     "notistack": "^3.0.1",
+    "o1js": "^0.13.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sharp": "^0.32.5",
-    "snarkyjs": "^0.12.1",
+    "testing_adding_number": "^0.1.1",
     "typescript": "5.1.6"
   }
 }

@@ -834,6 +834,11 @@ clsx@^2.0.0:
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.0.0.tgz#12658f3fd98fafe62075595a5c30e43d18f3d00b"
   integrity sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==
 
+coi-serviceworker@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/coi-serviceworker/-/coi-serviceworker-0.1.7.tgz#a105739386bf7101cdbaa32a167c576ca3376200"
+  integrity sha512-bjSUqEngCPOkErY2vbyWsaIGCNRODYzlNycaREVw5s12/C8SM+RnRUUeX6pZbTtov6C52ZLY/+tvHK+BDxuUuA==
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
@@ -2096,6 +2101,18 @@ notistack@^3.0.1:
     clsx "^1.1.0"
     goober "^2.0.33"
 
+o1js@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/o1js/-/o1js-0.13.0.tgz#812cf84922df58f9bb2b4106c291e1f5d3c6b28e"
+  integrity sha512-JwhdgEiGz+ucpvvddykW1pnX25tyPGUEUyurskb9T/k8U5ATPdHrvdV9WWsSGq3fXL4NT40UCY5Y9qQ6IegV8w==
+  dependencies:
+    blakejs "1.2.1"
+    detect-gpu "^5.0.5"
+    isomorphic-fetch "^3.0.0"
+    js-sha256 "^0.9.0"
+    reflect-metadata "^0.1.13"
+    tslib "^2.3.0"
+
 object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -2551,18 +2568,6 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-snarkyjs@^0.12.1:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/snarkyjs/-/snarkyjs-0.12.1.tgz#90c0620a52c8de3db7fa81b8a644f59141d00d12"
-  integrity sha512-Zv1tj+NBoid2O4Pewj1sUCcqYApoDJ4M6I/Lm7WzpRwf1HwU3h4rUF10mDfBaX4fb6A+9OXLI6cmR8P2URVehg==
-  dependencies:
-    blakejs "1.2.1"
-    detect-gpu "^5.0.5"
-    isomorphic-fetch "^3.0.0"
-    js-sha256 "^0.9.0"
-    reflect-metadata "^0.1.13"
-    tslib "^2.3.0"
-
 source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
@@ -2730,6 +2735,11 @@ tar-stream@^3.1.5:
     b4a "^1.6.4"
     fast-fifo "^1.2.0"
     streamx "^2.15.0"
+
+testing_adding_number@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/testing_adding_number/-/testing_adding_number-0.1.1.tgz#67f6e9fce24b550de9d07eadfde7f19787e12173"
+  integrity sha512-fnMJmcLo4YAR9SSSePknBJdmh9ZfPp1EFvKPhrcbWtXGIgRgmO1/zmfzLWV17cfMzTjd+pBAPWLPp7XBzKS8bA==
 
 text-table@^0.2.0:
   version "0.2.0"
