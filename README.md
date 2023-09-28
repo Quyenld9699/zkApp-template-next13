@@ -9,5 +9,5 @@ yarn add @mui/material  buffer bignumber.js date-fns notistack @mui/icons-materi
 _package for Mina chain and wallet_:
 
 ```bash
-yarn add snarkyjs
+yarn add o1js coi-serviceworker
 ```
